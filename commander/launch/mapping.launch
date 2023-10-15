@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Start the simulation -->
+    <include file = "$(find my_robot)/launch/base_gzb.launch"/>
+
+    <node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" output="screen">
+        <param name = "scan"       value = "scan" />
+        <param name = "odom_frame"     value = "odom_link" />
+        <param name = "base_frame"       value = "base_link" />
+    </node>
+</launch>
